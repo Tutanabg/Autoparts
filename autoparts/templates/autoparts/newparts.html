@@ -1,0 +1,77 @@
+{% extends "autoparts/layout.html" %}
+{% load static %}
+{% block body%}
+	{{message}}
+	<h2> BODY PARTS </h2>
+	<form id="body" >
+		<label for="b_type">Body Type:</label>
+		<input type="text" placeholder="Body_Type" id="b_type" style="background-color:#ffffff"><br>
+		<label for="b_price">Price:</label>
+		<input type="number" placeholder="Price" id="b_price" style="background-color:#ffffff">
+		<input type="submit">
+	</form>
+	{% for B in B %}
+	<ul>
+		<li><a href="{% url 'body' B.body_name %}">{{B.body_name}}</a></li>
+	</ul>
+	{% endfor %}   
+    <h2> DOORS PARTS </h2>
+	<form id="door" >
+		<label for="d_type">Door Type:</label>
+		<input type="text" placeholder="Door_Type" id="d_type" style="background-color:#ff6600"><br>
+		<label for="d_price">Price:</label>
+		<input type="number" placeholder="Price" id="d_price" style="background-color:#ff6600">
+		<input type="submit">
+	</form>
+    {% for D in D %}
+	<ul>
+		<li><a href="{% url 'doors' D.doors_name %}">{{D.doors_name}}</a></li>
+	</ul>
+	{% endfor %}   
+    <h2> AUDIO AND VIDEO DEVICES </h2>
+	 <form id="av" >
+		<label for="av_type">AV Type:</label>
+		<input type="text" placeholder="AV_Type" id="av_type" style="background-color:#99cc00"><br>
+		<label for="av_price">Price:</label>
+		<input type="number" placeholder="Price" id="av_price" style="background-color:#99cc00">
+		<input type="submit">
+	</form>
+    {% for AV in AV %}
+	<ul>
+		<li><a href="{% url 'avdevices' AV.av_name %}">{{AV.av_name}}</a></li>
+	</ul>
+	{% endfor %}
+    <h2> CAMERA TYPES </h2>
+    <form id="camera" >
+    	<label for="c_type">Camera Type:</label>
+		<input type="text" placeholder="Camera_Type" id="c_type" style="background-color:#33cccc"><br>
+		<label for="c_price">Price:</label>
+		<input type="number" placeholder="Price" id="c_price" style="background-color:#33cccc">
+		<input type="submit">
+	</form>
+    {% for C in C %}
+	<ul>
+		<li><a href="{% url 'cameras' C.cameras_name %}">{{C.cameras_name}}</a></li>
+	</ul>
+	{% endfor %}
+    <h2> WINDOWS TYPES </h2>
+	  <form id="window" >
+		<label for="w_type">Window Type:</label>
+		<input type="text" placeholder="Window_Type" id="w_type" style="background-color:#9999ff"></br>
+		<label for="w_price">Price:</label>
+		<input type="number" placeholder="Price" id="w_price" style="background-color:#9999ff">
+		<input type="submit">
+	</form>
+    {% for W in W %}
+	<ul>
+		<li><a href="{% url 'windows' W.windows_name %}">{{W.windows_name}}</a></li>
+	</ul>
+	{% endfor %}     
+{% endblock%}
+{% block script %}
+     <script src="{% static 'autoparts/body.js' %}"></script>
+     <script src="{% static 'autoparts/door.js' %}"></script>
+     <script src="{% static 'autoparts/av.js' %}"></script>
+     <script src="{% static 'autoparts/camera.js' %}"></script>
+     <script src="{% static 'autoparts/window.js' %}"></script>
+{% endblock %}

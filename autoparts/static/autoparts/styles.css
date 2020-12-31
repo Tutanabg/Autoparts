@@ -1,0 +1,21 @@
+body{
+background-color: #b2ad7f;
+}
+
+.pay{
+	color: #ffccff;
+}
+
+#item_name{
+color: red;
+}
+
+#item_price{
+color: blue;
+}
+
+.list{
+font-weight: bold;
+font-size: 20px;
+}
+

@@ -1,0 +1,17 @@
+{% extends "autoparts/layout.html" %}
+{% load static %}
+{% block body%}
+	<h2> Welcome to Payment Page </h2>
+	<br></br>
+	<h4 id="item_name">Item Name: {{d.body_name }}{{d.doors_name }}{{d.av_name }}{{d.cameras_name }}{{d.windows_name }}</h4>
+	<h4 id="item_price"> Item Price: {{d.body_price}}{{d.doors_price }}{{d.av_price}}{{d.cameras_price }}{{d.windows_price }}</h4>
+	<form class="pay" id="pay-form">
+		<input type="text" placeholder="Card Holder Name" id="name">
+		<input type="text" value="{{d.body_price}}{{d.doors_price }}{{d.av_price}}{{d.cameras_price }}{{d.windows_price }}" id="price">
+		<input type="number" placeholder="Card Number" id="card_number">
+		<input type="submit">
+	</form>
+{% endblock %}
+{% block script %}
+     <script src="{% static 'autoparts/autoparts.js' %}"></script>
+{% endblock %}

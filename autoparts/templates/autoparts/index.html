@@ -1,0 +1,37 @@
+{% extends "autoparts/layout.html" %}
+{% load static %}
+{% block body%}
+	<h2 style="color:#800000"> WELCOME TO THE PAGE WHERE YOU CAN BUY PARTS FOR YOUR CAR </h2>
+	<br></br>
+	<h2> BODY PARTS </h2>
+	{% for B in B %}
+	<ul>
+		<li><a href="{% url 'body' B.body_name %}">{{B.body_name}}</a></li>
+	</ul>
+	{% endfor %}   
+    <h2> DOORS PARTS </h2>
+    {% for D in D %}
+	<ul>
+		<li><a href="{% url 'doors' D.doors_name %}">{{D.doors_name}}</a></li>
+	</ul>
+	{% endfor %}   
+    <h2> AUDIO AND VIDEO DEVICES </h2>
+    {% for AV in AV %}
+	<ul>
+		<li><a href="{% url 'avdevices' AV.av_name %}">{{AV.av_name}}</a></li>
+	</ul>
+	{% endfor %}
+    <h2> CAMERA TYPES </h2>
+    {% for C in C %}
+	<ul>
+		<li><a href="{% url 'cameras' C.cameras_name %}">{{C.cameras_name}}</a></li>
+	</ul>
+	{% endfor %}
+    <h2> WINDOWS TYPES </h2>
+    {% for W in W %}
+	<ul>
+		<li><a href="{% url 'windows' W.windows_name %}">{{W.windows_name}}</a></li>
+	</ul>
+	{% endfor %}            
+{% endblock%}
+
